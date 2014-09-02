@@ -1,0 +1,20 @@
+.app-content-loading {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, .8);
+  position: absolute;
+  z-index: 100;
+
+  .loading-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+    .loading-spinner {
+      font-size: 50px;
+    }
+  }
+}
+

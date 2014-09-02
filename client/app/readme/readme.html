@@ -1,0 +1,18 @@
+<div content-for="title">説明</div>
+
+<div content-for="chat">
+  <div class="btn-group justified">
+    <div class="btn btn-navbar" ng-click="home()"><i class="fa fa-home fa-lg"></i> ホーム</div>
+  </div>
+</div>
+
+<div class="scrollable">
+  <div class="scrollable-content section">
+    <div class="container">
+
+      <div btf-markdown ng-include="'app/readme/readme.md'"></div>
+
+    </div>
+  </div>
+</div>
+

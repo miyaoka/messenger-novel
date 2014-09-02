@@ -1,29 +1,47 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<!-- Sidebars -->
+<div ng-include="'app/sidebar/sidebar.html'" class="sidebar sidebar-right"
+toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div>
 
+<div class="app">
 
-
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-<table class="table">
-  <tr ng-repeat="c in convs" ng-hide="c.index < 0">
-    <td>{{c.index}}</td>
-    <td><p ng-repeat="p in c.text track by $index" ng-bind-html="p"></p></td>
-  </tr>
-</table>
+<!-- Navbars -->
+  <div class="navbar navbar-app navbar-absolute-top">
+    <div class="navbar-brand navbar-brand-center">
+      <span yield-to="title"></span>
+    </div>
+    <div class="btn-group pull-left">
+      <a href="/import" class="btn btn-navbar">
+        <i class="fa fa-book fa-lg"></i>
+      </a>
+    </div>
+    <div class="btn-group pull-right">
+      <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
+        <i class="fa fa-bars fa-lg"></i>
+      </div>
     </div>
   </div>
-</div>
+
+  <div class="navbar navbar-app navbar-absolute-bottom">
+    <div yield-to="chat">
+    </div>
+  </div>
+
+  <!-- App Body -->
+  <div class="app-body" ng-class="{loading: loading}">
+    <div ng-show="loading" class="app-content-loading">
+      <i class="fa fa-spinner fa-spin loading-spinner"></i>
+    </div>
+
+    <div class="app-content">
+      <ui-view></ui-view>
+    </div>
+  </div>
+
+</div><!-- ~ .app -->
+
 
 <div ng-include="'components/aozora.html'"></div>
 
 
-<footer class="footer">
-  <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
+
+

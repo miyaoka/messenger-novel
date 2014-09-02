@@ -1,0 +1,84 @@
+<div content-for="title">{{ctrl.msgs.author || '読み込み中…'}}</div>
+
+<div content-for="chat">
+  <div class="btn-group justified">
+    <div class="btn btn-navbar" ng-click="say()">
+      <i class="fa fa-comments fa-lg"></i> トーク
+    </div>
+  </div>
+</div>
+
+
+<div class="scrollable msgr-body">
+  <div class="scrollable-content section">
+    <div class="container" id="msgr-scroll">
+
+
+<div class="msgr-container">
+
+
+<div ng-repeat="log in ctrl.logs.list">
+  <table ng-show="log.type == 'open'" class="info">
+    <tr>
+      <td class="msg center-block text-center">
+        <div class="msg-balloon">{{log.time | jpdate}}<br>{{log.text}}</div>
+      </td>
+    </tr>
+  </table>
+  <table ng-show="log.type == 'enter' || log.type == 'exit'" class="info">
+    <tr>
+      <td class="msg center-block text-center">
+        <div class="msg-balloon">{{log.time | msgtime}}<br>{{log.text}}</div>
+      </td>
+    </tr>
+  </table>
+  <table ng-show="log.index == -1" class="info">
+    <tr>
+      <td class="msg center-block">
+        <div ng-bind-html="log.text" class="msg-balloon"></div>
+      </td>
+    </tr>
+  </table>
+
+  <table ng-show="log.index % 2 == 0" class="author">
+    <tr>
+      <td class="portrait">
+        <div class="portrait-container">
+          <img src="{{ctrl.msgs.authorImg}}" ng-show="ctrl.msgs.authorImg">
+          <i class="fa fa-user fa-4x" ng-hide="ctrl.msgs.authorImg"></i>
+        </div>
+      </td>
+      <td class="msg">
+        <div class="name">{{ctrl.msgs.author}}</div>
+        <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'">
+        <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
+      </td>
+      <td class="time">
+        <span class="time">{{log.time | msgtime}}</span>
+      </td>
+    </tr>
+  </table>
+
+  <table ng-show="log.index % 2 == 1" class="me pull-right">
+    <tr>
+      <td class="time">
+        <span class="time">{{log.time | msgtime}}</span>
+      </td>
+      <td class="msg">
+        <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'">
+        <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
+      </td>
+    </tr>
+  </table>
+
+
+  <div class="clearfix"></div>
+</div>
+
+</div>
+
+
+    </div>
+  </div>
+</div>
+

@@ -5,7 +5,10 @@ angular.module('messengerApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'mobile-angular-ui',
+  'btford.markdown',
+  'mobile-angular-ui.plugins.ui-router'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $urlRouterProvider

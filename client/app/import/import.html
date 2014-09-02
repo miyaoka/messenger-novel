@@ -1,0 +1,53 @@
+<div content-for="title">作品読み込み</div>
+<div content-for="chat">
+  <div class="btn-group justified">
+    <div class="btn btn-navbar" ng-click="ctrl.home()"><i class="fa fa-home fa-lg"></i> ホーム</div>
+  </div>
+</div>
+
+
+<div class="scrollable" ng-class="{loading: ctrl.loading}">
+  <div class="scrollable-content section">
+
+    <div ng-show="ctrl.loading" class="app-content-loading">
+      <div class="loading-container">
+        <i class="fa fa-spinner fa-spin loading-spinner"></i>
+        <div>取得中</div>
+      </div>
+
+    </div>
+
+    <form ng-submit="ctrl.import()">
+
+      <div bs-panel>
+
+       <input
+        bs-form-control
+
+        type="text"
+        data-ng-model="ctrl.aozoraURI"
+        label="青空文庫から文豪を現世に召喚しよう"
+        placeholder="作品URLを入力"
+        pattern="https?://.+"
+        required
+       />
+       <p>(http://www.aozora.gr.jp/cards/****/files/****.html)</p>
+      </div>
+
+      <div bs-panel class="form-actions">
+        <button class="btn btn-primary">
+          実行
+        </button>
+      </div>
+    </form>
+
+    <div bs-panel ng-show="ctrl.errMsg">
+      <div class="alert alert-danger" role="alert">
+        {{ctrl.errMsg}}
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
