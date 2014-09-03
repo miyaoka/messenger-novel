@@ -29,7 +29,7 @@ angular.module('messengerApp')
       //会話
       var talkPattern = /((\s|\S)*?)(「|」)/mg;
       //空欄
-      var emptyPattern = /^[\n\r\s]+$/;
+      var emptyPattern = /^[\n\r]*$/;
       //句読点
       var punctuationPattern = /\S+?(、|。|！|？|…|——|$)+/gm;
       //改行
