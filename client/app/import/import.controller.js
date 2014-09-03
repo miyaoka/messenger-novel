@@ -11,6 +11,9 @@ angular.module('messengerApp')
       $state.go('main.messenger');
     }
     this.import = function(){
+      //2回読み込んでしまうのを防止
+      Config.autoImport = true;
+
       this.loading = true;
       this.errMsg = null;
 
@@ -49,9 +52,6 @@ angular.module('messengerApp')
 
     //クエリがあれば自動でインポート開始する
     if(this.aozoraURI && !Config.autoImport ){
-      //2回読み込んでしまうのを防止
-      Config.autoImport = true;
-
       this.import();
     }
   });
