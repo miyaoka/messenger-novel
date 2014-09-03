@@ -1,0 +1,5 @@
+<div class="list-group" ng-controller="RecommendCtrl">
+  <a ng-repeat="item in items" class="list-group-item" ng-href="import?uri={{item.href}}">
+    {{item.title}} / {{item.author}}
+  </a>
+</div>
