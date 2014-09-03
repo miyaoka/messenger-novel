@@ -33,7 +33,7 @@ angular.module('messengerApp')
       //句読点
       var punctuationPattern = /\S+?(、|。|！|？|…|——|$)+/gm;
       //改行
-      var rtPattern = /\S+?(\n|$)+/gm;
+      var rtPattern = /.+?(\n|\r|$)+/gm;
 
       //会話レベル 0:地の文、1以上:会話
       var talkLevel = 0;
