@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('messengerApp')
-  .controller('ImportCtrl', function ($scope, $state, Aozora, Message, Log, Google) {
+  .controller('ImportCtrl', function ($scope, $state, Aozora, Message, Log, Google, Config) {
     var self = this;
-    this.aozoraURI = '';
+    this.aozoraURI = $state.params.uri;
     this.errMsg = null;
+    this.loading = false;
 
     this.home = function(){
       $state.go('main.messenger');
@@ -12,6 +13,9 @@ angular.module('messengerApp')
     this.import = function(){
       this.loading = true;
       this.errMsg = null;
+
+      //入力内容をクエリにつけて同stateを読み直すことでリンク用アドレス生成
+      $state.transitionTo($state.current, {uri: this.aozoraURI}, {location:true, reload:false, notify:false});
 
       Aozora.get({
         uri: this.aozoraURI
@@ -25,7 +29,9 @@ angular.module('messengerApp')
             Message.load(res);
             Message.authorImgs = authorImgs;
             Message.titleImgs = titleImgs;
-            self.home();
+
+            //URLはそのままでmessenger画面に遷移する
+            $state.transitionTo('main.messenger', {}, {location:false});
           });
         });
       },
@@ -34,5 +40,18 @@ angular.module('messengerApp')
         self.loading = false;
         self.errMsg = err.data;
       })
+    }
+
+
+
+    //一旦リセット
+    $state.params = {};
+
+    //クエリがあれば自動でインポート開始する
+    if(this.aozoraURI && !Config.autoImport ){
+      //2回読み込んでしまうのを防止
+      Config.autoImport = true;
+
+      this.import();
     }
   });
