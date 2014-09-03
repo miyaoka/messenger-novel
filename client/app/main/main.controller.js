@@ -2,9 +2,14 @@
 
 
 angular.module('messengerApp')
-  .controller('MainCtrl', function ($scope, $http, $timeout, Message) {
+  .controller('MainCtrl', function ($scope, $http, $timeout, Message, Config) {
 
     $timeout(function(){
+      if(Config.autoImport){
+        return;
+      }
+
+      //デフォルト表示の作品を読み込む
       var res = {
         title: $('.title')[0].innerText,
         author: $('.author')[0].innerText,

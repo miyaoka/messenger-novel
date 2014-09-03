@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('messengerApp')
-  .controller('ImportCtrl', function ($scope, $state, Aozora, Message, Log, Google) {
+  .controller('ImportCtrl', function ($scope, $state, Aozora, Message, Log, Google, Config) {
     var self = this;
     this.aozoraURI = $state.params.uri;
     this.errMsg = null;
@@ -48,7 +48,10 @@ angular.module('messengerApp')
     $state.params = {};
 
     //クエリがあれば自動でインポート開始する
-    if(this.aozoraURI ){
+    if(this.aozoraURI && !Config.autoImport ){
+      //2回読み込んでしまうのを防止
+      Config.autoImport = true;
+
       this.import();
     }
   });
