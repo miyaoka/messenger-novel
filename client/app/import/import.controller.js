@@ -35,6 +35,9 @@ angular.module('messengerApp')
 
             //URLはそのままでmessenger画面に遷移する
             $state.transitionTo('main.messenger', {}, {location:false});
+
+            //遷移後にインポート済みフラグを解除する
+            Config.autoImport = false;
           });
         });
       },
