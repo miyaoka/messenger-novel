@@ -23,7 +23,7 @@ angular.module('messengerApp')
       if(!msg){
         return;
       }
-
+      $('#msgr-scroll').stop();
       $('#msgr-scroll').animate({
         scrollTop: document.getElementById('msgr-scroll').scrollHeight
       }, 300);
