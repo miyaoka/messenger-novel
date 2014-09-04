@@ -9,11 +9,16 @@ angular.module('messengerApp')
     }
     function randomJoinBR(items){
       var text = items.shift();
+      var lastItem = text;
       items.forEach(function(item){
-        if(Math.random() > 0.2){
+        //句読点込みで前の文字が3文字以上のときだけ改行を入れる
+        //※「一、二時間」といった文言の場合、改行を入れたくないので
+        console.log(lastItem.length, lastItem);
+        if(lastItem.length > 2 && Math.random() > 0.2){
           text += '<br>';
         }
         text += item;
+        lastItem = item;
       });
       return text;
     }
@@ -31,7 +36,7 @@ angular.module('messengerApp')
       //空欄
       var emptyPattern = /^[\n\r]*$/;
       //句読点
-      var punctuationPattern = /\S+?(、|。|！|？|…|——|$)+/gm;
+      var punctuationPattern = /\S+?(、|。|！|？|…|——|』|$)+/gm;
       //改行
       var rtPattern = /.+?(\n|\r|$)+/gm;
 
