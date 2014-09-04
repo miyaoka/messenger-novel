@@ -44,6 +44,10 @@ angular.module('messengerApp')
       //取得失敗
       function(err){
         self.loading = false;
+        if(err.status == 503){
+          self.errMsg = 'ただいまアクセス過多のためサービスが利用できなくなっています。10〜20分ほど時間をおいてから試してみてください。';
+          return;
+        }
         self.errMsg = err.data;
       })
     }
