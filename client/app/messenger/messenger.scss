@@ -75,6 +75,31 @@
       .msg-balloon{
         color:#18202f;
         background-color: #ffffff;
+
+        position: relative;
+        margin-left: 10px;
+      }
+      .msg-balloon:after {
+        content: '';
+        position: absolute;
+        height: 34px;
+        width: 44px;
+        border-bottom-left-radius: 10px  8px;
+        z-index: -1;
+        background: #7292c2;
+        top: -28px;
+        left: -10px;
+      }
+      .msg-balloon:before {
+        content: '';
+        position: absolute;
+        height: 44px;
+        width: 44px;
+        border-radius: 22px;
+        z-index: -1;
+        background: #fff;
+        top: -26px;
+        left: -10px;
       }
     }
   }
@@ -85,6 +110,30 @@
       .msg-balloon{
         color: #19232f;
         background-color: #85e249;
+        position: relative;
+        margin-right: 10px;
+      }
+      .msg-balloon:after {
+        content: '';
+        position: absolute;
+        height: 34px;
+        width: 44px;
+        border-bottom-right-radius: 10px  8px;
+        z-index: -1;
+        background: #7292c2;
+        top: -28px;
+        right: -10px;
+      }
+      .msg-balloon:before {
+        content: '';
+        position: absolute;
+        height: 44px;
+        width: 44px;
+        border-radius: 22px;
+        z-index: -1;
+        background: #85e249;
+        top: -26px;
+        right: -10px;
       }
     }
   }
