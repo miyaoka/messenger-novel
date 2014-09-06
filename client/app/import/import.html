@@ -24,19 +24,27 @@
 
     <form ng-submit="ctrl.import()">
 
-      <div bs-panel>
+      <div class="panel">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            青空文庫から文豪を現世に召喚しよう
+          </h2>
+        </div>
+        <div class="panel-body">
+          <input
+            bs-form-control
 
-       <input
-        bs-form-control
+            type="text"
+            data-ng-model="ctrl.aozoraURI"
+            label=""
+            placeholder="作品URLを入力"
+            pattern="https?://.+"
+            required
+          />
+          <p><a href="http://www.aozora.gr.jp/index_pages/index_top.html" target="_blank">青空文庫 <i class="fa fa-external-link"></i></a> から読みたい作品のXHTMLファイル版を開いてそのURLを上に入力してください</p>
+          <p>形式：http://www.aozora.gr.jp/cards/****/files/****.html</p>
 
-        type="text"
-        data-ng-model="ctrl.aozoraURI"
-        label="青空文庫から文豪を現世に召喚しよう"
-        placeholder="作品URLを入力"
-        pattern="https?://.+"
-        required
-       />
-       <p>(http://www.aozora.gr.jp/cards/****/files/****.html)</p>
+        </div>
       </div>
 
       <div bs-panel class="form-actions">
