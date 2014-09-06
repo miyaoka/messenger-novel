@@ -1,19 +1,24 @@
 <div content-for="title">{{ctrl.msgs.author || '読み込み中…'}}</div>
 
+<div content-for="top-left">
+  <a href="/import" class="btn btn-navbar">
+    <i class="fa fa-book fa-lg"></i>
+  </a>
+</div>
+
 <div content-for="chat">
   <div class="btn-group justified">
-    <div class="btn btn-navbar" ng-click="say()">
+    <div class="btn btn-navbar" ng-click="ctrl.say()">
       <i class="fa fa-comments fa-lg"></i> トーク
     </div>
   </div>
 </div>
 
+<kb-event keypress="ctrl.keyPress($event)" keydown="ctrl.keyDown($event)"></kb-event>
 
 <div class="scrollable msgr-body">
   <div class="scrollable-content">
     <div class="container" id="msgr-scroll">
-
-<kb-event></kb-event>
 
 <div class="msgr-container">
 

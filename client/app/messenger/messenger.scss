@@ -86,12 +86,12 @@
           content: '';
           position: absolute;
           height: 34px;
-          width: 44px;
+          width: 46px;
           border-bottom-left-radius: 10px  8px;
           z-index: -1;
           background: #7292c2;
           top: -27px;
-          left: -10px;
+          left: -11px;
         }
         .msg-balloon:before {
           content: '';
@@ -127,12 +127,12 @@
         content: '';
         position: absolute;
         height: 34px;
-        width: 44px;
+        width: 46px;
         border-bottom-right-radius: 10px  8px;
         z-index: -1;
         background: #7292c2;
         top: -27px;
-        right: -10px;
+        right: -11px;
       }
       .msg-balloon:before {
         content: '';
