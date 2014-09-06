@@ -13,7 +13,6 @@ angular.module('messengerApp')
       items.forEach(function(item){
         //句読点込みで前の文字が3文字以上のときだけ改行を入れる
         //※「一、二時間」といった文言の場合、改行を入れたくないので
-        console.log(lastItem.length, lastItem);
         if(lastItem.length > 2 && Math.random() > 0.2){
           text += '<br>';
         }

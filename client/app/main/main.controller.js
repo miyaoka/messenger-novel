@@ -11,9 +11,9 @@ angular.module('messengerApp')
 
       //デフォルト表示の作品を読み込む
       var res = {
-        title: $('.title')[0].innerText,
-        author: $('.author')[0].innerText,
-        text: $('.main_text')[0].innerHTML
+        title: $('.title').text(),
+        author: $('.author').text(),
+        text: $('.main_text').html()
       };
 
       Message.load(res);
