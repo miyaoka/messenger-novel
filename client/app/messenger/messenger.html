@@ -72,7 +72,7 @@
         <span class="time">{{log.time | msgtime}}</span>
       </td>
       <td class="col-msg">
-        <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'">
+        <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'" class="sticker">
         <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
       </td>
     </tr>

@@ -168,4 +168,9 @@
     margin-left: auto;
     margin-right: auto;
   }
+  img.sticker{
+    border-radius: 8px;        /* CSS3草案 */
+    -webkit-border-radius: 8px;    /* Safari,Google Chrome用 */
+    -moz-border-radius: 8px;   /* Firefox用 */
+  }
 }
