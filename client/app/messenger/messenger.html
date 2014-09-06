@@ -43,29 +43,35 @@
 
   <table ng-show="log.index % 2 == 0" class="author">
     <tr>
-      <td class="portrait">
+      <td class="col-portrait">
         <div class="portrait-container">
           <img ng-src="{{ctrl.msgs.authorImg}}" ng-show="ctrl.msgs.authorImg">
           <i class="fa fa-user fa-4x" ng-hide="ctrl.msgs.authorImg"></i>
         </div>
       </td>
-      <td class="msg">
+      <td class="col-msg">
         <div class="name">{{ctrl.msgs.author}}</div>
-        <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'">
-        <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
-      </td>
-      <td class="time">
-        <span class="time">{{log.time | msgtime}}</span>
+        <table class="msg">
+          <tr>
+            <td>
+              <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'" class="sticker">
+              <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
+            </td>
+            <td class="col-time">
+              <div class="time">{{log.time | msgtime}}</div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
 
   <table ng-show="log.index % 2 == 1" class="me pull-right">
     <tr>
-      <td class="time">
+      <td class="col-time">
         <span class="time">{{log.time | msgtime}}</span>
       </td>
-      <td class="msg">
+      <td class="col-msg">
         <img ng-src="{{log.src}}" ng-show="log.type == 'sticker'">
         <div ng-bind-html="log.text" class="msg-balloon" ng-hide="log.type == 'sticker'"></div>
       </td>

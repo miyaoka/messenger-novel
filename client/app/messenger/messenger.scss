@@ -26,11 +26,6 @@
   font-size: 1.0em;
   padding-bottom: 40px;
 
-  .enter-exit{
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
   .msg-balloon {
     color: rgba(0,0,0,.8);
     padding: 8px 14px 8px 14px;
@@ -40,73 +35,88 @@
     -moz-border-radius: 20px;   /* Firefox用 */
     display: inline-block;
   }
-  .time{
+  .col-time{
     color: #fff;
-    font-size: .8em;
+    font-size: .7em;
     vertical-align: bottom;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
   }
-  table{
+  table.info,
+  table.author,
+  table.me
+  {
     margin: 8px 0;
-
   }
-  .author{
-    .name{
-      color: rgba(255,255,255,1);
-      font-size: .8em;
-      padding-bottom: 4px;
-    }
-    .portrait{
+  table.enter-exit{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  table.author{
+    .col-portrait{
       vertical-align: top;
       .portrait-container{
         width:48px;
-/*
-        height: 36px;
-        overflow: hidden;
-*/
       }
       .portrait-img{
         width:48px;
       }
     }
-    .msg{
-      padding: 0px 4px 0px 6px;
+    .col-msg{
+      vertical-align: top;
 
-      .msg-balloon{
-        color:#18202f;
-        background-color: #ffffff;
-
-        position: relative;
-        margin-left: 10px;
+      .name{
+        color: rgba(255,255,255,1);
+        font-size: .8em;
+        margin-left: 12px;
       }
-      .msg-balloon:after {
-        content: '';
-        position: absolute;
-        height: 34px;
-        width: 44px;
-        border-bottom-left-radius: 10px  8px;
-        z-index: -1;
-        background: #7292c2;
-        top: -28px;
-        left: -10px;
-      }
-      .msg-balloon:before {
-        content: '';
-        position: absolute;
-        height: 44px;
-        width: 44px;
-        border-radius: 22px;
-        z-index: -1;
-        background: #fff;
-        top: -26px;
-        left: -10px;
+      .msg{
+        margin-top: 4px;
+        .sticker{
+          margin-top: 4px;
+          margin-left: 14px;
+        }
+        .msg-balloon{
+          color:#18202f;
+          background-color: #ffffff;
+          position: relative;
+          margin-left: 14px;
+        }
+        .msg-balloon:after {
+          content: '';
+          position: absolute;
+          height: 34px;
+          width: 44px;
+          border-bottom-left-radius: 10px  8px;
+          z-index: -1;
+          background: #7292c2;
+          top: -27px;
+          left: -10px;
+        }
+        .msg-balloon:before {
+          content: '';
+          position: absolute;
+          height: 44px;
+          width: 44px;
+          border-radius: 22px;
+          z-index: -1;
+          background: #fff;
+          top: -26px;
+          left: -10px;
+        }
+        .col-time{
+          padding-left: 6px;
+        }
       }
     }
   }
 
   .me{
-    .msg {
-      padding: 0px 0px 0px 4px;
+    .col-time{
+      padding-right: 6px;
+    }
+
+    .col-msg {
       .msg-balloon{
         color: #19232f;
         background-color: #85e249;
@@ -121,7 +131,7 @@
         border-bottom-right-radius: 10px  8px;
         z-index: -1;
         background: #7292c2;
-        top: -28px;
+        top: -27px;
         right: -10px;
       }
       .msg-balloon:before {
