@@ -6,16 +6,22 @@ angular.module('messengerApp')
     var self = this;
     this.msgs = Message;
     this.logs = Log;
+    this.finished = false;
 
     var pressedKeys = {};
 
     this.say = function(){
       say(true);
     }
+    this.restart = function(){
+      Log.clear();
+      Message.reload();
+      self.finished = false;
+    }
 
     function say(animate){
       if(!Message.next()){
-        return;
+        self.finished = true;
       }
       scrollMsg(animate);
     }

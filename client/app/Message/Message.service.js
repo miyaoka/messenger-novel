@@ -208,6 +208,21 @@ angular.module('messengerApp')
         });
 
       },
+      reload: function(){
+        index = 0;
+
+
+        Log.clear();
+        Log.add({
+          type: 'open',
+          text: Message.title
+        });
+        Log.add({
+          type: 'enter',
+          text: Message.author + 'が参加しました'
+        });
+
+      },
       next : function(){
         var msg;
         if(index > Message.msgs.length){

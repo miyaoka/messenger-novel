@@ -5,17 +5,15 @@ angular.module('messengerApp')
     var Log= {
       list: [],
       maxLength: 100,
+      get limitList(){
+        return Log.list.slice(Math.max(0, Log.list.length - Log.maxLength));
+      },
       clear: function(){
         Log.list = [];
       },
       add: function(msg){
         msg.time = new Date();
         Log.list.push(msg);
-
-        //最大表示行数を超えたら先頭から消去
-        while(Log.list.length > Log.maxLength){
-          Log.list.shift();
-        }
       }
     }
 

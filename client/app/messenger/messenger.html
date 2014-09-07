@@ -23,7 +23,7 @@
 <div class="msgr-container">
 
 
-<div ng-repeat="log in ctrl.logs.list">
+<div ng-repeat="log in ctrl.logs.limitList">
   <table ng-show="log.type == 'open'" class="info">
     <tr>
       <td class="msg center-block text-center">
@@ -86,6 +86,10 @@
 
   <div class="clearfix"></div>
 </div>
+
+<button class="btn btn-default center-block" ng-show="ctrl.finished" ng-click="ctrl.restart()">
+  <i class="fa fa-repeat"></i> 最初からトークをやり直す
+</button>
 
 </div>
 
