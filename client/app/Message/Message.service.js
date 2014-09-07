@@ -35,7 +35,7 @@ angular.module('messengerApp')
       //空欄
       var emptyPattern = /^[\n\r]*$/;
       //句読点
-      var punctuationPattern = /\S+?(、|。|！|？|…|——|』|$)+/gm;
+      var punctuationPattern = /\S+?(、|。|！|？|…|——|」|』|$)+/gm;
       //改行
       var rtPattern = /.+?(\n|\r|$)+/gm;
 
