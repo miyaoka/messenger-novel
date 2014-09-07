@@ -35,7 +35,7 @@ angular.module('messengerApp')
       //空欄
       var emptyPattern = /^[\n\r]*$/;
       //句読点
-      var punctuationPattern = /\S+?(、|。|！|？|…|——|』|$)+/gm;
+      var punctuationPattern = /\S+?(、|。|！|？|…|——|」|』|$)+/gm;
       //改行
       var rtPattern = /.+?(\n|\r|$)+/gm;
 
@@ -194,6 +194,21 @@ angular.module('messengerApp')
         Message.author = res.author;
         Message.title = res.title;
         Message.msgs = parseText(res.text);
+        index = 0;
+
+
+        Log.clear();
+        Log.add({
+          type: 'open',
+          text: Message.title
+        });
+        Log.add({
+          type: 'enter',
+          text: Message.author + 'が参加しました'
+        });
+
+      },
+      reload: function(){
         index = 0;
 
 

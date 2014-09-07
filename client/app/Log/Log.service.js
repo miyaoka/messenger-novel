@@ -4,6 +4,10 @@ angular.module('messengerApp')
   .factory('Log', function () {
     var Log= {
       list: [],
+      maxLength: 50,
+      get limitList(){
+        return Log.list.slice(Math.max(0, Log.list.length - Log.maxLength));
+      },
       clear: function(){
         Log.list = [];
       },
