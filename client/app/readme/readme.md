@@ -57,6 +57,10 @@
 
 ----
 
+### 制作
+
+* みやおか [@miyaoka](https://twitter.com/miyaoka)
+
 ### 謝辞
 
 * [青空文庫](http://www.aozora.gr.jp/)
