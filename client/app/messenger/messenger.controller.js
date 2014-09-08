@@ -43,6 +43,7 @@ angular.module('messengerApp')
       //13: enter
       //32: space
       if(e.which == 13 || e.which == 32){
+        e.preventDefault();
         sayByKey(e.which);
       }
     }
@@ -50,6 +51,7 @@ angular.module('messengerApp')
     this.keyDown = function(e){
       //40: arrow down
       if(e.which == 40){
+        e.preventDefault();
         sayByKey(e.which);
       }
     }
